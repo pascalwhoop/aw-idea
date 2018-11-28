@@ -1,12 +1,12 @@
 /* ==========================================================
 File:        CustomEditorMouseListener.java
 Description: Logs time from mouse click events.
-Maintainer:  WakaTime <support@wakatime.com>
+Maintainer:  ActivityWatch <support@wakatime.com>
 License:     BSD, see LICENSE for more details.
 Website:     https://wakatime.com/
 ===========================================================*/
 
-package com.wakatime.intellij.plugin;
+package net.activitywatch.watchers.idea;
 
 import com.intellij.openapi.editor.event.EditorMouseEvent;
 import com.intellij.openapi.editor.event.EditorMouseListener;
@@ -20,7 +20,7 @@ public class CustomEditorMouseListener  implements EditorMouseListener {
         FileDocumentManager instance = FileDocumentManager.getInstance();
         VirtualFile file = instance.getFile(editorMouseEvent.getEditor().getDocument());
         Project project = editorMouseEvent.getEditor().getProject();
-        WakaTime.appendHeartbeat(file, project, false);
+        ActivityWatch.appendHeartbeat(file, project, false);
     }
 
     @Override

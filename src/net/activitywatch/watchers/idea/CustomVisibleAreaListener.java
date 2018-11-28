@@ -1,12 +1,12 @@
 /* ==========================================================
 File:        CustomEditorMouseMotionListener.java
 Description: Logs time from mouse motion events.
-Maintainer:  WakaTime <support@wakatime.com>
+Maintainer:  ActivityWatch <support@wakatime.com>
 License:     BSD, see LICENSE for more details.
 Website:     https://wakatime.com/
 ===========================================================*/
 
-package com.wakatime.intellij.plugin;
+package net.activitywatch.watchers.idea;
 
 import com.intellij.openapi.editor.event.VisibleAreaEvent;
 import com.intellij.openapi.editor.event.VisibleAreaListener;
@@ -20,6 +20,6 @@ public class CustomVisibleAreaListener implements VisibleAreaListener {
         FileDocumentManager instance = FileDocumentManager.getInstance();
         VirtualFile file = instance.getFile(visibleAreaEvent.getEditor().getDocument());
         Project project = visibleAreaEvent.getEditor().getProject();
-        WakaTime.appendHeartbeat(file, project, false);
+        ActivityWatch.appendHeartbeat(file, project, false);
     }
 }

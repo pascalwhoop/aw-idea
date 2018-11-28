@@ -1,12 +1,12 @@
 /* ==========================================================
 File:        CustomSaveListener.java
 Description: Sends a heartbeat when a file is saved.
-Maintainer:  WakaTime <support@wakatime.com>
+Maintainer:  ActivityWatch <support@wakatime.com>
 License:     BSD, see LICENSE for more details.
 Website:     https://wakatime.com/
 ===========================================================*/
 
-package com.wakatime.intellij.plugin;
+package net.activitywatch.watchers.idea;
 
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
@@ -20,7 +20,7 @@ public class CustomSaveListener implements FileDocumentManagerListener {
     public void beforeDocumentSaving(Document document) {
         FileDocumentManager instance = FileDocumentManager.getInstance();
         VirtualFile file = instance.getFile(document);
-        WakaTime.appendHeartbeat(file, WakaTime.getProject(document), true);
+        ActivityWatch.appendHeartbeat(file, ActivityWatch.getProject(document), true);
     }
 
     @Override

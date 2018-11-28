@@ -1,12 +1,12 @@
 /* ==========================================================
 File:        CustomDocumentListener.java
 Description: Logs time from document change events.
-Maintainer:  WakaTime <support@wakatime.com>
+Maintainer:  ActivityWatch <support@wakatime.com>
 License:     BSD, see LICENSE for more details.
 Website:     https://wakatime.com/
 ===========================================================*/
 
-package com.wakatime.intellij.plugin;
+package net.activitywatch.watchers.idea;
 
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.event.DocumentEvent;
@@ -24,6 +24,6 @@ public class CustomDocumentListener implements DocumentListener {
         Document document = documentEvent.getDocument();
         FileDocumentManager instance = FileDocumentManager.getInstance();
         VirtualFile file = instance.getFile(document);
-        WakaTime.appendHeartbeat(file, WakaTime.getProject(document), false);
+        ActivityWatch.appendHeartbeat(file, ActivityWatch.getProject(document), false);
     }
 }
