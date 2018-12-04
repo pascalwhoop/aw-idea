@@ -14,6 +14,9 @@ import com.intellij.openapi.editor.event.DocumentListener;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.vfs.VirtualFile;
 
+/**
+ * whenever a document gets changed
+ */
 public class CustomDocumentListener implements DocumentListener {
     @Override
     public void beforeDocumentChange(DocumentEvent documentEvent) {
